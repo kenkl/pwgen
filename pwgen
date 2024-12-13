@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+import secrets, string
+from sys import argv
+
+def genpw(pwLength=16):
+    # for _ in range(500):
+    #     print("".join(secrets.choice(string.printable.strip()) for _ in range(27)))
+
+    return("".join(secrets.choice(string.printable.strip()) for _ in range(pwLength)))
+
+if __name__ == "__main__":
+    try:
+        print(genpw(int(argv[1])))
+    except:
+        print(genpw())
